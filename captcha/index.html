@@ -1,0 +1,10 @@
+<html>
+    <h1>Golang 技术精品课</h1>
+    <form action="/captcha/verify/" method="post">
+        User:<input type="text"><br>
+        Pwd:<input type="password"><br>
+        Captcha:<input type="text" name="code">
+        <img src="/captcha/" alt="" onclick="this.src='/captcha?v='+Math.random()"><br>
+        <input type="submit">
+    </form>
+</html>
