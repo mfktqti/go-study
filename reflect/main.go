@@ -20,6 +20,7 @@ func main() {
 	v2 := reflect.ValueOf(reflectCallFunc).Call(args)[0]
 	fmt.Printf("v2.Kind(): %v\n", v2.Kind())
 	fmt.Printf("v2.Interface(): %v\n", v2.Interface())
+
 	fmt.Printf("  return: type=%v, value=[%d]\n", v2.Type(), v2.Int())
 }
 
