@@ -1,0 +1,28 @@
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+type RecMailReqeust {
+	First       string `json:"first"`
+	Last        string `json:"last"`
+	Email       string `json:"email"`
+	Phone       string `json:"phone"`
+	CompanyName string `json:"companyName"`
+	Detail      string `json:"detail"`
+}
+
+type RecMailResponse {
+	Message string `json:"message"`
+}
+
+service mail_gozero-api {
+	@handler Mail_gozeroHandler
+	get /from/:name(Request) returns (Response)
+	
+	@handler MailHandler
+	post /mail/rec_mail_handler(RecMailReqeust) returns (RecMailResponse)
+}
