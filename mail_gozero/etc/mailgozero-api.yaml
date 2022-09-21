@@ -1,3 +1,10 @@
 Name: mail_gozero-api
 Host: 0.0.0.0
 Port: 8888
+
+MailConfig:
+  From: "514588891@qq.com"
+  To: "514588891@qq.com"
+  Code: "oendykuxsptxcafj"
+  MailServerAddr: "smtp.qq.com:587"
+  MailServerHost: "smtp.qq.com"
