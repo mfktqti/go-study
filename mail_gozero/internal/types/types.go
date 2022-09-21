@@ -10,9 +10,9 @@ type Response struct {
 }
 
 type RecMailReqeust struct {
-	First       string `json:"first"`
-	Last        string `json:"last"`
-	Email       string `json:"email"`
+	First       string `json:"first" validate:"required"`
+	Last        string `json:"last" validate:"required"`
+	Email       string `json:"email" validate:"required"`
 	Phone       string `json:"phone"`
 	CompanyName string `json:"companyName"`
 	Detail      string `json:"detail"`
