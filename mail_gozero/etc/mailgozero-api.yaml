@@ -2,6 +2,9 @@ Name: mail_gozero-api
 Host: 0.0.0.0
 Port: 8888
 
+Log:
+  Mode: "file"
+
 MailConfig:
   From: "514588891@qq.com"
   To: "514588891@qq.com"

@@ -27,7 +27,7 @@ func NewMailLogic(ctx context.Context, svcCtx *svc.ServiceContext) *MailLogic {
 }
 
 func (l *MailLogic) Mail(req *types.RecMailReqeust) (resp *types.RecMailResponse, err error) {
-	// l.Logger.Infov(req)
+	l.Logger.Infow("mail request", logx.Field("name", req.First+req.Last))
 	mailConfig := l.svcCtx.Config.MailConfig
 	e := email.NewEmail()
 	e.From = mailConfig.From
