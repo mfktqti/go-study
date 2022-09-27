@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ "$1" = "api" ]; then
-    goctl api go -api GoQioZu.api -dir . -style gozero
+    goctl api go -api mailgozero.api -dir . -style gozero
 fi
 
 if [ "$1" = "test" ]; then
-    go run goqiozu.go -f etc/goqiozu-api.dev.yaml
+    go run goqiozu.go -f etc/mailgozero-api.yaml
 fi
 
 if [ "$1" = "-deploy" ]; then
-    go run mailgozero -f etc/goqiozu-api.dev.yaml &
+    ./mailgozero -f etc/mailgozero-api.yaml &
 fi
