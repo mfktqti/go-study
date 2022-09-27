@@ -25,6 +25,6 @@ func NewMail_gozeroLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Mail_
 
 func (l *Mail_gozeroLogic) Mail_gozero(req *types.Request) (resp *types.Response, err error) {
 	// todo: add your logic here and delete this line
-
+	resp = &types.Response{Message: "ok"}
 	return
 }

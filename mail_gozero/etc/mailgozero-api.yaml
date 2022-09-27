@@ -4,10 +4,11 @@ Port: 8888
 
 Log:
   Mode: "file"
+  Level: "error"
 
 MailConfig:
-  From: "514588891@qq.com"
+  From: "zhouli@piizu.com"
   To: "514588891@qq.com"
-  Code: "oendykuxsptxcafj"
-  MailServerAddr: "smtp.qq.com:587"
-  MailServerHost: "smtp.qq.com"
+  Code: "Zl12345678"
+  MailServerAddr: "smtp.qiye.aliyun.com:25"
+  MailServerHost: "smtp.qiye.aliyun.com"
