@@ -21,8 +21,12 @@ func main() {
 	conf.MustLoad(*configFile, &c)
 
 	ctx := svc.NewServiceContext(c)
-	// server := rest.MustNewServer(c.RestConf, rest.WithCors())
-	server := rest.MustNewServer(c.RestConf, rest.WithCors())
+	server := &rest.Server{}
+	if !c.MailConfig.Cors {
+		server = rest.MustNewServer(c.RestConf)
+	} else {
+		server = rest.MustNewServer(c.RestConf, rest.WithCors())
+	}
 	defer server.Stop()
 
 	handler.RegisterHandlers(server, ctx)

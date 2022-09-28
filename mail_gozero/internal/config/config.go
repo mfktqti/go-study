@@ -10,5 +10,6 @@ type Config struct {
 		Code           string // 发邮件的安全码
 		MailServerAddr string
 		MailServerHost string
+		Cors           bool
 	}
 }
