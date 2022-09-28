@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#export set PATH=/var/www/piizu.com
+
+#cd $PATH
+
+MAIN_PROCESS_NUM=$(pgrep mailgozero)
+
+
+if [ ! -z "$MAIN_PROCESS_NUM" ]; then
+    echo "mailgozero is already running,now kill it and restart ..."
+    kill -9 $MAIN_PROCESS_NUM
+fi
+
+./bin/mailgozero -f etc/mailgozero-api.yaml &

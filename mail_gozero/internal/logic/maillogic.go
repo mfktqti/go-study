@@ -32,9 +32,12 @@ func (l *MailLogic) Mail(req *types.RecMailReqeust) (resp *types.RecMailResponse
 	e := email.NewEmail()
 	e.From = mailConfig.From
 	e.To = []string{mailConfig.To}
-	e.Subject = fmt.Sprintf("来自用户%s %s的留言,phone:%s", req.Last, req.First, req.Phone)
-	content := fmt.Sprintf("mail:%s,company name:%s,detail:%s", req.Email, req.CompanyName, req.Detail)
-	e.Text = []byte(content)
+	e.Subject = fmt.Sprintf("来自用户%s %s的留言", req.Last, req.First)
+	content := fmt.Sprintf("<h1>Email:%s</h1>", req.Email)
+	content += fmt.Sprintf("<h1>Phone:%s</h1>", req.Phone)
+	content += fmt.Sprintf("<h1>CompanyName:%s</h1>", req.CompanyName)
+	content += fmt.Sprintf("<h1>Detail:%s</h1>", req.Detail)
+	e.HTML = []byte(content)
 	err = e.Send(mailConfig.MailServerAddr, smtp.PlainAuth("", mailConfig.From, mailConfig.Code, mailConfig.MailServerHost))
 	return
 }
