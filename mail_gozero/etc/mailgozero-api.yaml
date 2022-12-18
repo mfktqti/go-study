@@ -12,3 +12,4 @@ MailConfig:
   Code: "Zl12345678"
   MailServerAddr: "smtp.qiye.aliyun.com:25"
   MailServerHost: "smtp.qiye.aliyun.com"
+  Cors: false
